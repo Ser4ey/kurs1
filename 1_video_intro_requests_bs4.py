@@ -10,7 +10,8 @@ def get_html(url):
 def get_data(html):
     soup = BeautifulSoup(html, 'lxml')
     h1 = soup.find('div', id='home-welcome').find('header').find('h1').text
-    return h1
+    p = soup.find('div', id='home-welcome').find('header').find('p').text
+    return (h1, p)
 
 
 
